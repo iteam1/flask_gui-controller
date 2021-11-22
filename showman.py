@@ -5,13 +5,15 @@ import sqlite3
 
 class App:
 
-	def __init__(self,parent,width = 1024,height = 600):
+	def __init__(self,parent,width = 1024,height = 600,path = './source/static/huma/'):
 		self.parent = parent # This is root window
+		self.path = path # the path lead to gif, images,... of the showman
 		self.width = width 
 		self.height = height
 		self.canvas = tkinter.Canvas(parent,width = self.width,height = self.height)
+		self.sequence = [ImageTk.PhotoImage(img) for img in ImageSequence.Iterator(Image.open(self.path + 'happyblink' +'.gif'))]
 		self.canvas.pack()
-		self.animate()
+		self.animate(1)
 
 	def dbconnect(self):
 		self.conn = sqlite3.connect("./source/site.db")
@@ -31,16 +33,25 @@ class App:
 		else:
 			return None
 
-	def animate(self,stime = 100):
+	def animate(self,counter,stime = 200):
 
 		itype,item = self.dbconnect()
 
 		if itype == 'info':
-			content = tkinter.Label(self.parent,text = item,fg = 'black',font= ('Arial',10))
-			self.canvas.create_window(512,300,anchor = 'nw',window = content)
+			self.canvas.delete("all") # clear canvas before draw something new
+			content = tkinter.Label(self.parent,text = item,fg = 'black',font= ('Arial',30))
+			self.canvas.create_window(312,250,anchor = 'nw',window = content)
 
-		elif itype == 'info':
-			conte
+		elif itype == 'emo':
+			self.canvas.delete("all")
+			self.sequence = [ImageTk.PhotoImage(img) for img in ImageSequence.Iterator(Image.open(self.path + item +'.gif'))]
+			self.image = self.canvas.create_image(512,300,image= self.sequence[0])
+			try:
+				self.canvas.itemconfig(self.image, image = self.sequence[counter])
+			except:
+				pass
+		
+		self.parent.after(stime,lambda: self.animate((counter+1)%len(self.sequence)))
 
 root = tkinter.Tk()
 app = App(root)
