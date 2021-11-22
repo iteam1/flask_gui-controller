@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- <h1 style="color:green;text-align:center;">Jetboy's Helm</h1>
+    <br>
+    <div class = 'container'>
+        <div class="position-relative h-100">
+            <div class="position-absolute top-center">
+                <form action = "#" method = 'POST'>
+                    <input type = 'hidden' name = 'command' id = 'command'  value = 'forward'>
+                    <button class="btn btn-primary">&#8593;</button>
+                </form>
+            </div>
+            <br><br><br><br>
+
+            <div class="position-absolute mid-center">
+                <form action = "#" method = 'POST'>
+                    <input type = 'hidden' name = 'command' id = 'command'  value = 'stop'>
+                    <button class= 'btn btn-danger'>Stop</button>
+                </form>
+            </div>
+            <br><br><br><br>
+
+            <div class="position-absolute bottom-center">
+                <form action = "#" method = 'POST'>
+
+                    <input type = 'hidden' name = 'command' id = 'command' value = 'backward'>
+                    <button class="btn btn-primary">&#8595;</button>
+                </form>
+            </div>
+
+            <div class="position-absolute mid-left">
+                <form action = "#" method = 'POST'>
+                    <input type = 'hidden' name = 'command' id = 'command'  value = 'turnleft'>
+                    <button class="btn btn-primary">&#8592;</button>
+                </form>
+            </div>
+
+            <div class = "position-absolute mid-right">
+                <form action = "#" method = 'POST'>
+                    <input type = 'hidden' name = 'command' id = 'command'  value = 'turnright'>
+                    <button class="btn btn-primary">&#8594;</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div> -->
+    <br>
+    <h1 style="color:green;text-align:center;">Content</h1>
+    <div clas = 'row'>
+        <form action = "{{ url_for('content') }}" method = 'POST'>
+            <input class="form-control form-control-lg" type="text" placeholder = "What you wanna say?" name = "content">
+            <small class="form-text text-muted">.</small>
+            <button type="submit" class="btn btn-primary mb-2">Say it!</button>
+        </form> 
+    </div>
+    <br>
+    <h1 style="color:green;text-align:center;">Emotion</h1>
+    <div class = 'row'>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'happyblink'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128515;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'blushing'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128563;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'simplesmileblink'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128578;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'sleeping'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128564;</button>
+        </form>
+    </div>
+
+{% endblock content %}
+
+		
