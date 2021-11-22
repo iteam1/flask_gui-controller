@@ -39,7 +39,7 @@ class App:
 			content = tkinter.Label(self.parent,text = item,fg = 'black',font= ('Arial',10))
 			self.canvas.create_window(512,300,anchor = 'nw',window = content)
 
-		elif itype = 'info':
+		elif itype == 'info':
 			conte
 
 root = tkinter.Tk()
