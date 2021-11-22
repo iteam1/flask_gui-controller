@@ -11,7 +11,11 @@ There are some thing people can use to make another understand like:
 
 This demo create "showman" can display emotion, words, GIF for expressing and notification
 The showman written by `tkinter` (a libary of python to create basic GUI, widgets)
+<<<<<<< HEAD
 The server written by `flask`
+=======
+The server written by `flask` 
+>>>>>>> 1077f90c275a1c1ff15ed29e62fc98a6df04df70
 
 ## Applications
 
