@@ -22,9 +22,19 @@ def emotion():
 	if request.method == 'POST':
 		emotion = request.form.get('emotion')
 		showman = Showman.query.get(1)
-		print(emotion)
 		showman.itype = 'emo'
 		showman.emotion = emotion
+		db.session.commit()
+		return render_template('helm.html')
+	return render_template('helm.html')
+
+@app.route('/image',methods =['GET','POST'])
+def image():
+	if request.method == 'POST':
+		image = request.form.get('image')
+		showman = Showman.query.get(1)
+		showman.itype = 'img'
+		showman.image = image
 		db.session.commit()
 		return render_template('helm.html')
 	return render_template('helm.html')

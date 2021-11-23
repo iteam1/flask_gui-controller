@@ -9,6 +9,7 @@ c.execute("""
 	id INTEGER PRIMARY KEY,
 	content TEXT,
 	emotion TEXT,
+	image TEXT,
 	itype TEXT
 	)
 	""")

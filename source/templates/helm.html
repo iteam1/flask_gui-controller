@@ -58,6 +58,22 @@
     <h1 style="color:green;text-align:center;">Emotion</h1>
     <div class = 'row'>
         <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'sleeping'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128564;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'face-sad'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128532;</button>
+        </form>
+        <form action = "{{ url_for('image') }}" method = 'POST'>
+            <input type = 'hidden' name = 'image' value = 'straightface'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128528;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
+            <input type = 'hidden' name = 'emotion' value = 'simplesmileblink'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128578;</button>
+        </form>
+        <form action = "{{ url_for('emotion') }}" method = 'POST'>
             <input type = 'hidden' name = 'emotion' value = 'happyblink'>
             <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128515;</button>
         </form>
@@ -66,12 +82,12 @@
             <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128563;</button>
         </form>
         <form action = "{{ url_for('emotion') }}" method = 'POST'>
-            <input type = 'hidden' name = 'emotion' value = 'simplesmileblink'>
-            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128578;</button>
+            <input type = 'hidden' name = 'emotion' value = 'cat-typing'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128569;</button>
         </form>
         <form action = "{{ url_for('emotion') }}" method = 'POST'>
-            <input type = 'hidden' name = 'emotion' value = 'sleeping'>
-            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128564;</button>
+            <input type = 'hidden' name = 'emotion' value = 'dog-looking'>
+            <button type="submit" class="btn btn-secondary" style="font-size:50px">&#128054;</button>
         </form>
     </div>
 
