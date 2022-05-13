@@ -4,7 +4,7 @@
 
 # flask_GUIcontroller
 
-## Abstract
+### Abstract
 
 This demo demonstrate a way to use web control GUI (as know as showman in this demo).
 There are some thing people can use to make another understand like:
@@ -17,11 +17,11 @@ This demo create "showman" can display emotion, words, GIF for expressing and no
 The showman written by `tkinter` (a libary of python to create basic GUI, widgets)
 The server written by `flask`
 
-## Applications
+### Applications
 
 User (or client) can apply this demo for your robot, etc,...
 
-## References
+### References
 
 https://imotions.com/
 
